@@ -3,6 +3,8 @@ const apiKey = "64555bc1e6d8ac3073853234e29a5595";
 
 const dataArr = [];
 const weatherObj = (data) => {
+  // Вот тут мутируешь массив и возвращаешь его, ссылка на него находится в стейте, из за этого проблемы с его обновлением
+  // Ниже getWeather написана без мутирования объектов
   dataArr.push(data);
   return dataArr.length > 2 ? dataArr.splice(0, 2) : dataArr;
 };
